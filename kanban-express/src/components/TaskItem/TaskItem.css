@@ -1,0 +1,25 @@
+.taskItem{
+    background-color: aliceblue;
+    border-radius: 3px;
+    box-shadow: 0 1px rgba(9, 30, 66, 0.25);
+    cursor: pointer;
+    margin-bottom: 8px;
+    padding: 8px 4px;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+
+.taskItem input[type='text']{
+    border: nome;
+    font-size: 14px;
+    display: none;
+    display: block;
+    width: 100%;
+}
+
+.taskItem select{
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+}
