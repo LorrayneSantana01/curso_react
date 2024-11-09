@@ -1,7 +1,8 @@
 import "./TaskList.css";
+import TaskItem from "../TaskItem/TaskItem";
 import PropTypes from "prop-types";
 
-export default function TaskList({ title, onAddTask, tasks }) {
+export default function TaskList({ title, onAddTask, tasks, onTaskUpdate }) {
   const AddTask = () => {
     onAddTask("Nova Tarefa", "To Do");
   };
@@ -10,8 +11,16 @@ export default function TaskList({ title, onAddTask, tasks }) {
     <div className="taskList">
       <div className="titulo">{title}</div>
       <div className="content">
-        {tasks.map((taks) => {
-          return <div key={taks.id}>{taks.title}</div>;
+        {tasks.map((task) => {
+          return (
+            <TaskItem
+              key={task.id}
+              id={task.id}
+              title={task.title}
+              taskState={task.state}
+              onTaskUpdate={onTaskUpdate}
+            />
+          );
         })}
       </div>
       <button onClick={AddTask}>Adicionar Tarefa</button>
