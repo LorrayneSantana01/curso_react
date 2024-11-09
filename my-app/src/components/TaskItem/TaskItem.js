@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import TaskList from "../TaskList/TaskList";
+import "./TaskItem.css";
 
-export default function TaskItem({ id, title, taskState, onTaskUpdate }) {
+export default function TaskItem({ id, title, taskState, onTaskUpdate, onDeleteTask }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editableTitle, setEditableTitle] = useState(title);
 
@@ -15,6 +16,9 @@ export default function TaskItem({ id, title, taskState, onTaskUpdate }) {
   const onKeyDown = (event) => {
     if (event.key === "Enter") {
       setIsEditing(false);
+      if(editableTitle.length === 0) {
+        onDeleteTask(id);
+      }
     }
   };
 
@@ -33,7 +37,7 @@ export default function TaskItem({ id, title, taskState, onTaskUpdate }) {
     );
   } else {
     return(
-    <div>
+    <div className="taskItem">
       <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>
       <select onChange={onTaskStateChange} value={taskState}>
         <option value="To Do">To Do</option>
