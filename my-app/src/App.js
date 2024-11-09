@@ -47,10 +47,10 @@ export default function App() {
       <Navbar />
       <div className="container">
         <TaskList
-          title="To do"
+          title="To Do"
           onAddTask={AddTask}
-          taskState="To do"
-          tasks={tasks.filter((t) => t.state === "To do")}
+          taskState="To Do"
+          tasks={tasks.filter((t) => t.state === "To Do")}
           onTaskUpdate={updateTask}
           onDeleteTask={deleteTask}
         />

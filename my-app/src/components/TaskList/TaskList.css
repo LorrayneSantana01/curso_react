@@ -4,6 +4,24 @@
     border-radius: 7px;
 }
 
+.taskList .btn{
+    margin-top: 8px;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    color: aliceblue;
+    background: #303030;
+    transition: background-color 0.3s;    
+}
+
+.taskList .btn:hover{
+    background-color: dimgray;
+    cursor: pointer;
+}
+
 .taskList .titulo{
     padding: 4px;
     font-weight: bold;
@@ -17,4 +35,11 @@
     padding: 16px 4px;
     display: flex;
     flex-direction: column;
+}
+
+.taskList .content .emptyLista{
+    text-align: center;
+    border: 1px dashed white;
+    border-radius: 4px;
+    padding: 4px;
 }
