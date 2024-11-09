@@ -43,7 +43,22 @@ export default function App() {
         <TaskList
           title="To do"
           onAddTask={AddTask}
-          tasks={tasks}
+          taskState="To do"
+          tasks={tasks.filter((t) => t.state === "To do")}
+          onTaskUpdate={updateTask}
+        />
+        <TaskList
+          title="Doing"
+          onAddTask={AddTask}
+          taskState="Doing"
+          tasks={tasks.filter((t) => t.state === "Doing")}
+          onTaskUpdate={updateTask}
+        />
+        <TaskList
+          title="Done"
+          onAddTask={AddTask}
+          taskState="Done"
+          tasks={tasks.filter((t) => t.state === "Done")}
           onTaskUpdate={updateTask}
         />
       </div>
